@@ -1,9 +1,9 @@
- 
+const createSubscription = async (req, res, next) => {
+  // Implementation for createSubscription
+};
 
-export const createSubscription = async (req, res, next) => {
+const getUserSubscriptions = async (req, res, next) => {
+  // Implementation for getUserSubscriptions
+};
 
-}
-
-export const getUserSubscriptions = async (req, res, next) => {
-
-}
+module.exports = { createSubscription, getUserSubscriptions };

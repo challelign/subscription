@@ -1,11 +1,15 @@
-import { Router } from 'express';
+const { Router } = require("express");
 
-import { signUp, signIn, signOut } from '../controllers/auth.controller.js';
-
+const { signUp, signIn, signOut } = require("../controllers/auth.controller");
+const { validateRequestBody } = require("../middlewares/validation.middleware");
 const authRouter = Router();
 
-authRouter.post('/sign-up', signUp);
-authRouter.post('/sign-in', signIn);
-authRouter.post('/sign-out', signOut);
+authRouter.post(
+  "/sign-up",
+  validateRequestBody(["name", "username", "email", "password"]),
+  signUp
+);
+authRouter.post("/sign-in", validateRequestBody(["email", "password"]), signIn);
+authRouter.post("/sign-out", signOut);
 
-export default authRouter;
+module.exports = authRouter;

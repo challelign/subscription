@@ -1,16 +1,14 @@
-import { Router } from 'express';
- 
-import { getUser, getUsers } from '../controllers/user.controller.js'
+const { Router } = require("express");
+const { getUsers } = require("../controllers/user.controller");
 
 const userRouter = Router();
 
-userRouter.get('/', getUsers);
- 
+userRouter.get("/", getUsers);
 
-userRouter.post('/', (req, res) => res.send({ title: 'CREATE new user' }));
+userRouter.post("/", (req, res) => res.send({ title: "CREATE new user" }));
 
-userRouter.put('/:id', (req, res) => res.send({ title: 'UPDATE user' }));
+userRouter.put("/:id", (req, res) => res.send({ title: "UPDATE user" }));
 
-userRouter.delete('/:id', (req, res) => res.send({ title: 'DELETE user' }));
+userRouter.delete("/:id", (req, res) => res.send({ title: "DELETE user" }));
 
-export default userRouter;
+module.exports = userRouter;
