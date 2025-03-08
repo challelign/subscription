@@ -1,9 +1,13 @@
+const User = require("../models/user.model");
+const { log_error } = require("../utils/logger");
+
 exports.getUsers = async (req, res, next) => {
   try {
     const users = await User.find();
 
     res.status(200).json({ success: true, data: users });
   } catch (error) {
+    log_error("[GET_USERS_ERROR] " + error.stack.split("\n").join("\n\t"));
     next(error);
   }
 };
@@ -20,6 +24,7 @@ exports.getUser = async (req, res, next) => {
 
     res.status(200).json({ success: true, data: user });
   } catch (error) {
+    log_error("[GET_USER_ERROR] " + error.stack.split("\n").join("\n\t"));
     next(error);
   }
 };

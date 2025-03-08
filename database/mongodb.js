@@ -15,11 +15,12 @@ if (!DB_URI) {
 
 const connectToDatabase = async () => {
   try {
-    await mongoose.connect(DB_URI);
-    log_error(
-      `Connected to database in  
-        ${NODE_ENV} mode on port =>${PORT}`
-    );
+    const dbLogs = await mongoose.connect(DB_URI);
+    // console.log("[dbLogs]", dbLogs.Connection);
+    // log_error(
+    //   `Connected to database in
+    //     ${NODE_ENV} mode on port =>${PORT}`
+    // );
     console.log(`Connected to database in ${NODE_ENV} mode`);
   } catch (error) {
     console.error("Error connecting to database: ", error);

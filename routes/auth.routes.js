@@ -9,7 +9,7 @@ authRouter.post(
   validateRequestBody(["name", "username", "email", "password"]),
   signUp
 );
-authRouter.post("/sign-in", validateRequestBody(["email", "password"]), signIn);
+authRouter.post("/sign-in", validateRequestBody(["password"]), signIn); // Only require password,but email or username will be handled in validation
 authRouter.post("/sign-out", signOut);
 
 module.exports = authRouter;

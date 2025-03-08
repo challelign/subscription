@@ -10,12 +10,11 @@ const signUp = async (req, res, next) => {
   // const session = await mongoose.startSession();
   // session.startTransaction();
 
-  console.log("I am here ");
   try {
     const { name, username, email, password } = req.body;
 
     // Check if a user already exists by using email or username
-    const existingUser = await user.findOne({
+    const existingUser = await User.findOne({
       $or: [{ email: email || undefined }, { username: username || undefined }],
     });
 
@@ -30,7 +29,7 @@ const signUp = async (req, res, next) => {
     const hashedPassword = await bcrypt.hash(password, salt);
 
     const newUsers = await User.create(
-      [{ name, email, password: hashedPassword }]
+      [{ name, email, username, password: hashedPassword }]
       // { session }
     );
 
@@ -59,9 +58,14 @@ const signUp = async (req, res, next) => {
 
 const signIn = async (req, res, next) => {
   try {
-    const { email, password } = req.body;
+    const { email, password, username } = req.body;
 
-    const user = await User.findOne({ email });
+    // Check if a user already exists by using email or username
+    const user = await User.findOne({
+      $or: [{ email: email || undefined }, { username: username || undefined }],
+    });
+
+    // const user = await User.findOne({ email });
 
     if (!user) {
       const error = new Error("User not found");

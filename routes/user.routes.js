@@ -1,9 +1,10 @@
 const { Router } = require("express");
-const { getUsers } = require("../controllers/user.controller");
+const { getUsers, getUser } = require("../controllers/user.controller");
 
 const userRouter = Router();
 
 userRouter.get("/", getUsers);
+userRouter.get("/:id", getUser);
 
 userRouter.post("/", (req, res) => res.send({ title: "CREATE new user" }));
 
