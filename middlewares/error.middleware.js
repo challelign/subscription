@@ -35,7 +35,7 @@ exports.errorMiddleware = (err, req, res, next) => {
       .json({ success: false, error: error.message || "Server Error" });
   } catch (error) {
     console.log("[error_log]");
-    log_error(error.stack.split("\n").join("\n\t"));
+    log_error("[ERROR_MIDDLEWARE] " + error.stack.split("\n").join("\n\t"));
 
     next(error);
   }

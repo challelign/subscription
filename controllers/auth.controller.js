@@ -51,7 +51,8 @@ const signUp = async (req, res, next) => {
   } catch (error) {
     // await session.abortTransaction();
     // session.endSession();
-    log_error(error.stack.split("\n").join("\n\t"));
+    log_error("[SIGN_UP] " + error.stack.split("\n").join("\n\t"));
+
     next(error);
   }
 };
@@ -94,7 +95,7 @@ const signIn = async (req, res, next) => {
       },
     });
   } catch (error) {
-    log_error(error.stack.split("\n").join("\n\t"));
+    log_error("[SIGN_IN] " + error.stack.split("\n").join("\n\t"));
 
     next(error);
   }

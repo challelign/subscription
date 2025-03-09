@@ -25,6 +25,7 @@ exports.authorize = async (req, res, next) => {
 
     next();
   } catch (error) {
+    log_error("[AUTHORIZATION_ERROR] " + error.stack.split("\n").join("\n\t"));
     res
       .status(401)
       .json({ success: false, message: "Unauthorized", error: error.mesage });
