@@ -7,6 +7,7 @@ const authRouter = require("./routes/auth.routes"); // Remove the .js extension
 const connectToDatabase = require("./database/mongodb"); // Remove the .js extension
 const { log_error } = require("./utils/logger"); // Remove the .js extension
 const { errorMiddleware } = require("./middlewares/error.middleware");
+const subscriptionRouter = require("./routes/subscription.routes");
 // const { arcjetMiddleware } = require("./middlewares/arcjet.middleware");
 
 const app = express();
@@ -18,6 +19,7 @@ app.use(cookieParser());
 
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/users", userRouter);
+app.use("/api/v1/subscription", subscriptionRouter);
 
 app.use(errorMiddleware);
 
@@ -27,21 +29,7 @@ app.get("/", (req, res) => {
 
 // Error handling middleware
 app.use((err, req, res, next) => {
-  const statusCode =
-    process.env.NODE_ENV === "development" ? err.statusCode || 500 : 200;
-  const errStatusCode = err.statusCode || 500;
-
-  const response = {
-    status: false,
-    message: "Internal Server Error",
-  };
-
-  res.status(statusCode).json(response);
-
-  if (process.env.NODE_ENV === "development") {
-    // Log the error stack to a file
-    log_error(err.stack.split("\n").join("\n\t"));
-  }
+  log_error("[GLOBAL_ERROR_HANDDLE]" + err.stack.split("\n").join("\n\t"));
 });
 //url not found middleware
 app.use((req, res) => {
