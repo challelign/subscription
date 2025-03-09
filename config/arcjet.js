@@ -1,30 +1,40 @@
-require = require("esm")(module);
-const arcjet = require("@arcjet/node");
+const { ARCJET_KEY } = require("./env.js"); // Local module import with `require()`
 
-const { shield, detectBot, tokenBucket } = require("@arcjet/node");
-const { ARCJET_KEY } = require("./env");
+const initializeAj = async () => {
+  try {
+    // Dynamically import the ES module `@arcjet/node`
+    const arcjetModule = await import("@arcjet/node"); // Dynamically import the ES module
 
-exports.aj = arcjet({
-  // Get your site key from https://app.arcjet.com and set it as an environment
-  // variable rather than hard coding.
-  key: ARCJET_KEY,
-  characteristics: ["ip.src"], // Track requests by IP
-  rules: [
-    // Shield protects your app from common attacks e.g. SQL injection
-    shield({ mode: "LIVE" }),
-    // Create a bot detection rule
-    detectBot({
-      mode: "LIVE",
-      allow: [
-        "CATEGORY:SEARCH_ENGINE", // Google, Bing, etc
+    // Destructure the module
+    const { shield, detectBot, tokenBucket } = arcjetModule;
+
+    // Initialize aj with the imported functions
+    const aj = arcjetModule.default({
+      key: ARCJET_KEY,
+      characteristics: ["ip.src"],
+      rules: [
+        shield({ mode: "LIVE" }),
+        detectBot({
+          mode: "LIVE",
+          allow: ["CATEGORY:SEARCH_ENGINE"],
+        }),
+        tokenBucket({
+          mode: "LIVE",
+          refillRate: 5, // Refill 5 tokens per interval
+          interval: 10, // Refill every 10 seconds
+          capacity: 10, // Bucket capacity of 10 tokens
+        }),
       ],
-    }),
-    // Create a token bucket rate limit. Other algorithms are supported.
-    tokenBucket({
-      mode: "LIVE",
-      refillRate: 5, // Refill 5 tokens per interval
-      interval: 10, // Refill every 10 seconds
-      capacity: 10, // Bucket capacity of 10 tokens
-    }),
-  ],
-});
+    });
+
+    return aj;
+  } catch (error) {
+    console.error("Error initializing Arcjet:", error);
+    log_error("[ARCJET_ERROR] " + error.stack.split("\n").join("\n\t"));
+
+    throw error;
+  }
+};
+
+// Export the initialization function
+module.exports = { initializeAj };
