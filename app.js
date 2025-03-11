@@ -9,6 +9,7 @@ const { log_error } = require("./utils/logger"); // Remove the .js extension
 const { errorMiddleware } = require("./middlewares/error.middleware");
 const subscriptionRouter = require("./routes/subscription.routes");
 const arcjetMiddleware = require("./middlewares/arcjet.middleware");
+const workflowRouter = require("./routes/workflow.routes");
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(arcjetMiddleware);
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/subscription", subscriptionRouter);
+app.use("/api/v1/workflows", workflowRouter);
 
 app.use(errorMiddleware);
 

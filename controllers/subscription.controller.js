@@ -1,5 +1,6 @@
+const { SERVER_URL } = require("../config/env");
+const { workflowClient } = require("../config/upstash");
 const Subscription = require("../models/subscription.model");
-const User = require("../models/user.model");
 const { log_error } = require("../utils/logger");
 
 const createSubscription = async (req, res, next) => {
@@ -9,7 +10,20 @@ const createSubscription = async (req, res, next) => {
       user: req.user._id,
     });
 
-    res.status(201).json({ success: true, data: subscription });
+    const { workflowRunId } = await workflowClient.trigger({
+      url: `${SERVER_URL}/api/v1/workflows/subscription/reminder`,
+      body: {
+        subscriptionId: subscription.id,
+      },
+      headers: {
+        "content-type": "application/json",
+      },
+      retries: 0,
+    });
+
+    res
+      .status(201)
+      .json({ success: true, data: { subscription, workflowRunId } });
   } catch (error) {
     log_error("[CREATE_SUBSCRIPTION] " + error.stack.split("\n").join("\n\t"));
     next(error);
@@ -37,7 +51,6 @@ const getUserSubscriptions = async (req, res, next) => {
 };
 const getAllSubscriptions = async (req, res, next) => {
   try {
-    console.log("All Req new =>", req.headers);
     const allSubs = await Subscription.find();
 
     res.status(200).json({ success: true, data: allSubs });
