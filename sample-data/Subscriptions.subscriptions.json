@@ -1,0 +1,282 @@
+[
+  {
+    "_id": {
+      "$oid": "67cfd1837958406ffef19f19"
+    },
+    "name": "Amazon Prime Video",
+    "price": 29.99,
+    "currency": "USD",
+    "frequency": "monthly",
+    "category": "entertainment",
+    "paymentMethod": "Credit Card",
+    "status": "expired",
+    "startDate": {
+      "$date": "2024-02-01T00:00:00.000Z"
+    },
+    "user": {
+      "$oid": "67cfce977958406ffef19f0e"
+    },
+    "createdAt": {
+      "$date": "2025-03-11T06:00:35.751Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-11T06:00:35.751Z"
+    },
+    "renewalDate": {
+      "$date": "2024-03-02T00:00:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67cfd1ec7958406ffef19f1c"
+    },
+    "name": "HBO Max",
+    "price": 15.99,
+    "currency": "USD",
+    "frequency": "weekly",
+    "category": "lifestyle",
+    "paymentMethod": "Credit Card",
+    "status": "active",
+    "startDate": {
+      "$date": "2025-03-11T06:00:35.751Z"
+    },
+    "user": {
+      "$oid": "67cfce977958406ffef19f0e"
+    },
+    "createdAt": {
+      "$date": "2025-03-11T06:02:20.610Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-11T06:02:20.610Z"
+    },
+    "renewalDate": {
+      "$date": "2025-03-18T06:00:35.751Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67cfd21a7958406ffef19f1f"
+    },
+    "name": "Netflix  Pro",
+    "price": 56.99,
+    "currency": "USD",
+    "frequency": "yearly",
+    "category": "entertainment",
+    "paymentMethod": "Credit Card",
+    "status": "active",
+    "startDate": {
+      "$date": "2025-03-11T06:00:35.751Z"
+    },
+    "user": {
+      "$oid": "67cfce977958406ffef19f0e"
+    },
+    "createdAt": {
+      "$date": "2025-03-11T06:03:06.445Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-11T06:03:06.445Z"
+    },
+    "renewalDate": {
+      "$date": "2026-03-11T06:00:35.751Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67cfd3487958406ffef19f28"
+    },
+    "name": "Sling TV",
+    "price": 13.99,
+    "currency": "USD",
+    "frequency": "weekly",
+    "category": "lifestyle",
+    "paymentMethod": "Credit Card",
+    "status": "active",
+    "startDate": {
+      "$date": "2025-03-11T06:00:35.751Z"
+    },
+    "user": {
+      "$oid": "67cfce6d7958406ffef19f0b"
+    },
+    "createdAt": {
+      "$date": "2025-03-11T06:08:08.557Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-11T06:08:08.557Z"
+    },
+    "renewalDate": {
+      "$date": "2025-03-18T06:00:35.751Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67cfd3807958406ffef19f2d"
+    },
+    "name": "Acorn TV",
+    "price": 11.99,
+    "currency": "USD",
+    "frequency": "monthly",
+    "category": "finance",
+    "paymentMethod": "Credit Card",
+    "status": "active",
+    "startDate": {
+      "$date": "2025-03-11T06:00:35.751Z"
+    },
+    "user": {
+      "$oid": "67cfce6d7958406ffef19f0b"
+    },
+    "createdAt": {
+      "$date": "2025-03-11T06:09:04.941Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-11T06:09:04.941Z"
+    },
+    "renewalDate": {
+      "$date": "2025-04-10T06:00:35.751Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67cfdac78f8293cb5c3af301"
+    },
+    "name": "Amazon TV",
+    "price": 11.99,
+    "currency": "USD",
+    "frequency": "monthly",
+    "category": "finance",
+    "paymentMethod": "Credit Card",
+    "status": "active",
+    "startDate": {
+      "$date": "2025-03-11T06:00:35.751Z"
+    },
+    "user": {
+      "$oid": "67cfce6d7958406ffef19f0b"
+    },
+    "createdAt": {
+      "$date": "2025-03-11T06:40:07.486Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-11T06:40:07.486Z"
+    },
+    "renewalDate": {
+      "$date": "2025-04-10T06:00:35.751Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67cfe11e01c2d9d1134636e9"
+    },
+    "name": "Netflix  Pro",
+    "price": 56.99,
+    "currency": "USD",
+    "frequency": "yearly",
+    "category": "entertainment",
+    "paymentMethod": "Credit Card",
+    "status": "active",
+    "startDate": {
+      "$date": "2025-03-11T06:00:35.751Z"
+    },
+    "user": {
+      "$oid": "67cfce6d7958406ffef19f0b"
+    },
+    "createdAt": {
+      "$date": "2025-03-11T07:07:10.510Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-11T07:07:10.510Z"
+    },
+    "renewalDate": {
+      "$date": "2026-03-11T06:00:35.751Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67d024e5548edeb50980c1c1"
+    },
+    "name": "Sony  TV",
+    "price": 11.99,
+    "currency": "USD",
+    "frequency": "monthly",
+    "category": "finance",
+    "paymentMethod": "Credit Card",
+    "status": "active",
+    "startDate": {
+      "$date": "2025-03-11T06:00:35.751Z"
+    },
+    "user": {
+      "$oid": "67cfce6d7958406ffef19f0b"
+    },
+    "createdAt": {
+      "$date": "2025-03-11T11:56:21.334Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-11T11:56:21.334Z"
+    },
+    "renewalDate": {
+      "$date": "2025-04-10T06:00:35.751Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67d02522548edeb50980c1c4"
+    },
+    "name": "Mega Production",
+    "price": 11.99,
+    "currency": "USD",
+    "frequency": "monthly",
+    "category": "finance",
+    "paymentMethod": "Credit Card",
+    "status": "active",
+    "startDate": {
+      "$date": "2025-03-11T06:00:35.751Z"
+    },
+    "user": {
+      "$oid": "67cfce6d7958406ffef19f0b"
+    },
+    "createdAt": {
+      "$date": "2025-03-11T11:57:22.613Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-11T11:57:22.613Z"
+    },
+    "renewalDate": {
+      "$date": "2025-04-10T06:00:35.751Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67d027dd3d12fcad34a0d57a"
+    },
+    "name": "Mega Production",
+    "price": 11.99,
+    "currency": "USD",
+    "frequency": "monthly",
+    "category": "finance",
+    "paymentMethod": "Credit Card",
+    "status": "active",
+    "startDate": {
+      "$date": "2025-03-11T06:00:35.751Z"
+    },
+    "user": {
+      "$oid": "67cfce6d7958406ffef19f0b"
+    },
+    "createdAt": {
+      "$date": "2025-03-11T12:09:01.377Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-11T12:09:01.377Z"
+    },
+    "renewalDate": {
+      "$date": "2025-04-10T06:00:35.751Z"
+    },
+    "__v": 0
+  }
+]

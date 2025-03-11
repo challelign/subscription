@@ -1,0 +1,66 @@
+[
+  {
+    "_id": {
+      "$oid": "67cfce0e7958406ffef19f05"
+    },
+    "name": "Chalie T",
+    "username": "cha",
+    "email": "cha@gmail.com",
+    "password": "$2a$10$6nhB44ax0fNtht2RxnvVuOpMPQT8wX/S8t/uHrHtj0B0roVaJxbXW",
+    "createdAt": {
+      "$date": "2025-03-11T05:45:50.935Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-11T05:45:50.935Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67cfce247958406ffef19f08"
+    },
+    "name": "Ragnner Loth",
+    "username": "ragnner",
+    "email": "ragnner@gmail.com",
+    "password": "$2a$10$xNxDNnQYhTt6yHN28BazTuJFSmsLzfQGuKTsvOlT9SbH21yUUBOqi",
+    "createdAt": {
+      "$date": "2025-03-11T05:46:12.516Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-11T05:46:12.516Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67cfce6d7958406ffef19f0b"
+    },
+    "name": "Bjorn Ironside",
+    "username": "bjorn",
+    "email": "bjorn@gmail.com",
+    "password": "$2a$10$qBvbA/5vrdrKEeKAMHVPiOFR9KbtWgiLfioDbM2f7JcuPk9wHOKUy",
+    "createdAt": {
+      "$date": "2025-03-11T05:47:25.359Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-11T05:47:25.359Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67cfce977958406ffef19f0e"
+    },
+    "name": "Ivar the Boneless,",
+    "username": "ivar",
+    "email": "ivar@gmail.com",
+    "password": "$2a$10$ewWflDA0S0kk6On.DXg9Pu1pIkrxxz5p7.k5eM6ivVgIdD64YQ0/.",
+    "createdAt": {
+      "$date": "2025-03-11T05:48:07.075Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-11T05:48:07.075Z"
+    },
+    "__v": 0
+  }
+]
