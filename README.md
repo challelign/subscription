@@ -8,7 +8,7 @@
   <div>
     <img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white" alt="node.js" />
     <img src="https://img.shields.io/badge/express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="express.js" />
-    <img src="https://img.shields.io/badge/-MongoDB-13aa52?style=for-the-badge&logo=mongodb&logoColor=white" alt="mongodb" />
+    <img src="https://img.shields.io/badge/-MongoDB-13aa52?style=for-the-badge&logo=mongodb&logoColor=white" alt="mongodb" /> 
   </div>
 
   <h3 align="center">A Subscription Management System API</h3>
@@ -17,7 +17,7 @@
      Build this project step by step with our detailed tutorial on <a href="hhttps://www.youtube.com/@code-rookie-23" target="_blank"><b>JavaScript Mastery</b></a> YouTube. Join Code Rookie family!
     </div>
 </div>
-
+ 
 ## 📋 <a name="table">Table of Contents</a>
 
 1. 🤖 [Introduction](#introduction)
@@ -110,6 +110,27 @@ npm run dev
 ```
 
 Open [http://localhost:5500](http://localhost:3000) in your browser or any HTTP client to test the project.
+
+# TO RUN THE UPSTASH
+
+npx @upstash/qstash-cli dev
+
+# COPY AND PASTE IN THE .ENV.PRODUCTION FILE THE GENERATE ENV FILE LIKE THIS
+
+QSTASH_URL=http://localhost:8080
+QSTASH_TOKEN=eyJVc2VySUQiOiJkZWZhdWx0VXNlciIsIlBhc3N3b3JkIjoiZGVmYXVsdFBhc3N3b3JkIn0=
+QSTASH_CURRENT_SIGNING_KEY=sig_7kYjw48mhY7kAjqNGcy6cr29RJ6r
+QSTASH_NEXT_SIGNING_KEY=sig_5ZB6DVzB1wjE8S6rZ7eenA8Pdnhs
+
+# FROM THE GENERATED FILE ,Sample cURL request:
+
+# COPY THE URL AND PASTE TO THE .ENV.DEVEPOMENT FILE AND
+
+# NAME IT QSTASH_URL=http://localhost:8080
+
+# RUN Sample cURL request URL:USING CMD NOT IN POWERSHELL
+
+<!--  -->
 
 ## <a name="snippets">🕸️ Snippets</a>
 

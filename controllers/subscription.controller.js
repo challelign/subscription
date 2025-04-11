@@ -1,14 +1,37 @@
 const { SERVER_URL } = require("../config/env");
 const { workflowClient } = require("../config/upstash");
 const Subscription = require("../models/subscription.model");
+const User = require("../models/user.model");
 const { log_error } = require("../utils/logger");
+const { sendReminderEmail } = require("../utils/send-email");
 
 const createSubscription = async (req, res, next) => {
   try {
+    // OPTION ONE
+    /*     
     const subscription = await Subscription.create({
       ...req.body,
       user: req.user._id,
     });
+      const user = await User.findById(req.user._id).select("-password");
+    if (!user) {
+      const error = new Error("User not found");
+      error.statusCode = 404;
+      throw error;
+    }
+ */
+
+    // OPTION TWO START
+    let subscription = await Subscription.create({
+      ...req.body,
+      user: req.user._id,
+    });
+
+    // re-fetch the subscription with populated user details
+    subscription = await Subscription.findById(subscription._id).populate(
+      "user"
+    );
+    // OPTION TWO END
 
     const { workflowRunId } = await workflowClient.trigger({
       url: `${SERVER_URL}/api/v1/workflows/subscription/reminder`,
@@ -20,6 +43,29 @@ const createSubscription = async (req, res, next) => {
       },
       retries: 0,
     });
+
+    // OPTION ONE
+    /*     
+    if (subscription.status === "active") {
+      await sendReminderEmail({
+        to: user.email,
+        type: "thank_you",
+        subscription: {
+          ...subscription.toObject(), // convert Mongoose doc to plain object
+          user, // inject full user info
+        },
+      });
+    }
+ */
+    // OPTION TWO START
+    if (subscription.status === "active") {
+      await sendReminderEmail({
+        to: subscription.user.email,
+        type: "thank_you",
+        subscription,
+      });
+    }
+    // OPTION TWO END
 
     res
       .status(201)

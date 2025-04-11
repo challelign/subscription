@@ -16,7 +16,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(arcjetMiddleware);
+// app.use(arcjetMiddleware);
 
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/users", userRouter);
@@ -26,9 +26,12 @@ app.use("/api/v1/workflows", workflowRouter);
 app.use(errorMiddleware);
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the Subscription Tracker API!");
+  // res.send("Welcome to the Subscription Tracker API!");
+  res.status(200).json({
+    status: true,
+    message: `Welcome to the Subscription Tracker API!`,
+  });
 });
-
 // Error handling middleware
 app.use((err, req, res, next) => {
   log_error("[GLOBAL_ERROR_HANDDLE]" + err.stack.split("\n").join("\n\t"));
