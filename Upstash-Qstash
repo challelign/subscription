@@ -1,0 +1,51 @@
+curl -X POST http://127.0.0.1:8080/v2/publish/https://example.com -H "Authorization: Bearer eyJVc2VySUQiOiJkZWZhdWx0VXNlciIsIlBhc3N3b3JkIjoiZGVmYXVsdFBhc3N3b3JkIn0="
+
+## Upstash is a serverless data store (Redis / Kafka) platform providing low latency and high scalability for real-time applications. The main use is
+
+# Main use is Cache, pub/sub, rate limiting, etc. and Redis / Kafka protocol used
+
+We're using Upstash Redis for serverless caching in our Next.js app.
+
+🧱 What is Upstash?
+Upstash is the company and platform that provides:
+
+Serverless Redis: Great for caching, session storage, counters, rate limiting.
+
+Serverless Kafka: Event streaming and real-time data pipelines.
+
+📌 Use cases:
+
+Caching responses in a Next.js app
+
+Managing real-time data (via pub/sub)
+
+Throttling APIs
+
+Storing lightweight, transient data
+
+#### QStash (by Upstash)
+
+## QStash is a serverless messaging queueing and task scheduling solution. It fits easily into your existing workflow and allows you to build reliable systems without managing infrastructure.
+
+# Main use is Background jobs, retries, webhook delivery and use HTTPS (push-based) protocol used
+
+# Instead of calling an endpoint directly, QStash acts as a middleman between you and an API to guarantee delivery, perform automatic retries on failure, and more.
+
+📬 What is QStash?
+QStash is Upstash's serverless task queue that:
+
+Sends HTTP POST requests to your endpoints at scheduled times
+
+Includes retries, rate limiting, delay, deduplication
+
+Great for background jobs and webhook orchestration
+
+📌 Use cases:
+
+Send transactional emails asynchronously
+
+Retry failed webhooks
+
+Delay notifications
+
+Queue billing operations
