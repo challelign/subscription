@@ -139,12 +139,12 @@ QSTASH_NEXT_SIGNING_KEY=sig_5ZB6DVzB1wjE8S6rZ7eenA8Pdnhs
 
 ```json
 {
-  "name": "Amazon Prime",
-  "price": 75.99,
+  "name": "Udmey Next js course",
+  "price": 7.0,
   "currency": "USD",
-  "frequency": "monthly",
-  "category": "Entertainment",
-  "startDate": "2025-01-20T00:00:00.000Z",
+  "frequency": "yearly",
+  "category": "technology",
+  "startDate": "2025-01-10T00:00:00.000Z",
   "paymentMethod": "Credit Card"
 }
 ```
